@@ -1,53 +1,34 @@
-package Main;
+package oops;
 
-public class Student {
-	int rno;
-	String name;
-	public Student() { //default constructor
-		rno=77;
-		name="jai";
-	}//parameter constructor
-	public Student(int rno,String nm) {
-		this.rno=67;
-		name=nm="suri";
-	}
-	public Student(String nm) {
-		rno=99;
-	}
-	public Student(Student s) {
-		rno=s.rno;
-		name=s.name;
-	}
-	void display() {
-		System.out.println("Student rollno:" +rno);
-		System.out.println("Student name:" +name);
-		
-	}
-	
-	
+public class Student implements College, Hostel {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Student s = new Student();
-		s.rno=1;
-		s.name="chai";
-		s.display();
-		Student s1 = new Student();
-		s1.rno=2;
-		s1.name="chetu";
-		s1.display();
-		Student s4 = new Student();
-		s4.display();
-		Student s2 = new Student();
-		s2.display();	
-		Student s3= new Student(67, "suri");
-		s3.display();
-		Student s6 = new Student(s1);
-		s6.display();
-		Student s5 = new Student("rrrr");
-		s5.display();
+		Student s=new Student();
+		s.displayCollege();
+		s.displayHostel();
 		
-	
 	}
 
+	@Override
+	public void displayHostel() {
+		String name="vijaya college";
+		int id =123;
+		System.out.println("college name: "+name+"id is "+id);
+			
+		
+	}
+
+	@Override
+	public void displayCollege() {
+		String name1="ATB";
+		String add="banglore";
+		System.out.println("hostel name: "+name1+"address is "+add);
+		
+		
+	}
+
+
+
+
+	
 }
